@@ -1,0 +1,704 @@
+Revision: TrinityCore rev. cb8038fa272b 2014-10-02 21:55:25 +0300 (master branch) (Win32, Debug)
+Date 4:10:2014. Time 12:53 
+//=====================================================
+*** Hardware ***
+Processor: AMD Phenom(tm) II X4 945 Processor
+Number Of Processors: 4
+Physical Memory: 4194303 KB (Available: 4194303 KB)
+Commit Charge Limit: 4194303 KB
+
+*** Operation System ***
+Windows 7 Professional Service Pack 1 (Version 6.1, Build 7601)
+
+//=====================================================
+Exception code: C0000005 ACCESS_VIOLATION
+Fault address:  014C315D 01:0014215D C:\Trinity Core2\4.3.4 core\Core\worldserver.exe
+
+Registers:
+EAX:13EF71EC
+EBX:FFFDE000
+ECX:7D10A2AF
+EDX:000000A8
+ESI:0029BCC8
+EDI:0029B9F8
+CS:EIP:0023:014C315D
+SS:ESP:002B:0029B7C0  EBP:0029B7C8
+DS:002B  ES:002B  FS:0053  GS:002B
+Flags:00010202
+
+Call stack:
+Address   Frame     Function      SourceFile
+014C315D  00000000  Field::GetUInt32+2D  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\shared\database\field.h line 124
+01A07BD0  00000000  DBCStorage<SpellEffectEntry>::Load+730  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\shared\datastores\dbcstore.h line 237
+019003DF  00000000  LoadDBC<SpellEffectEntry>+14F  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\game\datastores\dbcstores.cpp line 288
+018DE725  00000000  LoadDBCStores+2AF5  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\game\datastores\dbcstores.cpp line 563
+014748DE  00000000  World::SetInitialWorldSettings+5DE  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\game\world\world.cpp line 1386
+0140D8B2  00000000  main+1032  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\worldserver\main.cpp line 199
+029E7E89  00000000  __tmainCRTStartup+199  f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c line 626
+029E7FCD  00000000  mainCRTStartup+D  f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c line 466
+756D338A  00000000  BaseThreadInitThunk+12
+777E9F72  00000000  RtlInitializeExceptionChain+63
+777E9F45  00000000  RtlInitializeExceptionChain+36
+========================
+Local Variables And Parameters
+
+Call stack:
+Address   Frame     Function      SourceFile
+014C315D  00000000  Field::GetUInt32+2D  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\shared\database\field.h line 124
+	Local Field* this = 0x13EF71EC
+		<unnamed-type-data>
+			unsigned int length = 0xFDFDFDFD
+			void* value = 0x7D10A2AF
+			int type = 0x1FBB4F
+			bool raw = 0xA8
+		Field::<unnamed-type-data> data
+			unsigned int length = 0xFDFDFDFD
+			<user defined> value = 0x7D10A2AF
+			int type = 0x1FBB4F
+			bool raw = 0xA8
+
+01A07BD0  00000000  DBCStorage<SpellEffectEntry>::Load+730  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\shared\datastores\dbcstore.h line 237
+	Local bool validSqlColumn = 0x1
+	Local unsigned int sqlColumnNumber = 0x18
+	Local unsigned int columnNumber = 0x19
+	Local unsigned int offset = 0x64
+	Local unsigned int rowIndex = 0x17C6C
+	Local DBCStorage<SpellEffectEntry>* this = 0x36FDCB4
+		char* fmt = "nifiiiffiiiiiifiifiiiiiiiix"
+		unsigned int nCount = 0x2560A
+		unsigned int fieldCount = 0x1B
+		<unnamed-type-indexTable>
+			SpellEffectEntry** asT = 0x6966696E
+			char** asChar = 0x6966696E <Unable to read memory>
+		DBCStorage<SpellEffectEntry>::<unnamed-type-indexTable> indexTable
+			SpellEffectEntry** asT = NULL
+			char** asChar = NULL
+		SpellEffectEntry* dataTable = 0x16940040
+			unsigned int Id = 0x1
+			unsigned int Effect = 0x5
+			float EffectValueMultiplier = 1.000000
+			unsigned int EffectApplyAuraName = 0x0
+			unsigned int EffectAmplitude = 0x0
+			int EffectBasePoints = 0x0
+			float EffectBonusMultiplier = 1.000000
+			float EffectDamageMultiplier = 1.000000
+			unsigned int EffectChainTarget = 0x0
+			int EffectDieSides = 0x6
+			unsigned int EffectItemType = 0x0
+			unsigned int EffectMechanic = 0x0
+			int EffectMiscValue = 0x0
+			int EffectMiscValueB = 0x0
+			float EffectPointsPerComboPoint = 0.000000
+			unsigned int EffectRadiusIndex = 0x0
+			unsigned int EffectRadiusMaxIndex = 0x0
+			float EffectRealPointsPerLevel = 0.000000
+			flag96 EffectSpellClassMask = 0x16940088
+			unsigned int EffectTriggerSpell = 0x0
+			unsigned int EffectImplicitTargetA = 0x1
+			unsigned int EffectImplicitTargetB = 0x9
+			unsigned int EffectSpellId = 0x1
+			unsigned int EffectIndex = 0x0
+		std::list<char *,std::allocator<char *> > stringPoolList
+			std::_List_buy<char *,std::allocator<char *> >
+				std::_List_alloc<0,std::_List_base_types<char *,std::allocator<char *> > >
+					std::_List_val<std::_List_simple_types<char *> >
+						std::_Container_base12
+							std::_Container_proxy* _Myproxy = 0x36FDCC8
+						std::_List_node<char *,void *>* _Myhead = 0x702500
+						unsigned int _Mysize = 0x1
+		std::map<unsigned int,SpellEffectEntry const *,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> > > data
+			std::_Tree<std::_Tmap_traits<unsigned int,SpellEffectEntry const *,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> >,0> >
+				std::_Tree_comp<0,std::_Tmap_traits<unsigned int,SpellEffectEntry const *,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> >,0> >
+					std::_Tree_buy<std::pair<unsigned int const ,SpellEffectEntry const *>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> > >
+						std::_Tree_alloc<0,std::_Tree_base_types<std::pair<unsigned int const ,SpellEffectEntry const *>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> > > >
+							std::_Tree_val<std::_Tree_simple_types<std::pair<unsigned int const ,SpellEffectEntry const *> > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x36FDCD4
+								std::_Tree_node<std::pair<unsigned int const ,SpellEffectEntry const *>,void *>* _Myhead = 0x7013C0
+								unsigned int _Mysize = 0x0
+				<user defined> value_compare = 0x36FDCD4
+			<user defined> value_compare = 0x36FDCD4
+		bool loaded = 0x0
+	Parameter char* fn = "./dbc/SpellEffect.dbc"
+	Parameter SqlDbc* sql = 0x55370B8
+		std::string* formatString = "ppppppppppppppappppppppppp"
+		std::string* indexName = "Id"
+		std::string sqlTableName = "spelleffect_dbc"
+		int indexPos = 0x0
+		int sqlIndexPos = 0x0
+	Local unsigned int sqlHighestIndex = 0x25609
+	Local std::shared_ptr<ResultSet> result
+		std::_Ptr_base<ResultSet>
+			ResultSet* _Ptr = 0x13C4E300
+				unsigned int _rowCount = 0x4B
+				Field* _currentRow = 0x13EF70B4
+				unsigned int _fieldCount = 0x18
+				st_mysql_res* _result = 0x5ABFE70
+				st_mysql_field* _fields = 0x5E15DA0
+			std::_Ref_count_base* _Rep = 0x143E5D38
+				unsigned long _Uses = 0x1
+				unsigned long _Weaks = 0x1
+	Local DBCFileLoader dbc
+		Record
+			unsigned int* offset = 0x6C <Unable to read memory>
+			DBCFileLoader& file = 0x17C6C
+				Record
+					unsigned int* offset = NULL
+					DBCFileLoader& file = NULL
+				unsigned int recordSize = 0x0
+				unsigned int recordCount = 0x0
+				unsigned int fieldCount = 0x0
+				unsigned int stringSize = 0x0
+				unsigned int* fieldsOffset = NULL
+				unsigned int* data = NULL
+				unsigned int* stringTable = NULL
+		unsigned int recordSize = 0x6C
+		unsigned int recordCount = 0x17C6C
+		unsigned int fieldCount = 0x1B
+		unsigned int stringSize = 0x1
+		unsigned int* fieldsOffset = 0x0
+		unsigned int* data = 0x1
+		unsigned int* stringTable = 0x0
+	Local Field* fields = 0x13EF70B4
+		<unnamed-type-data>
+			unsigned int length = 0x6
+			void* value = 0x14082DD8
+			int type = 0x3
+			bool raw = 0x0
+		Field::<unnamed-type-data> data
+			unsigned int length = 0x6
+			<user defined> value = 0x14082DD8
+			int type = 0x3
+			bool raw = 0x0
+	Local unsigned int sqlRecordCount = 0x4B
+	Local char* sqlDataTable = "	V"
+
+019003DF  00000000  LoadDBC<SpellEffectEntry>+14F  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\game\datastores\dbcstores.cpp line 288
+	Parameter unsigned int& availableDbcLocales = 0xFFFFFE00
+	Parameter std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >& errors = 0x29D0D0
+		std::_List_buy<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+			std::_List_alloc<0,std::_List_base_types<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >
+				std::_List_val<std::_List_simple_types<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+					std::_Container_base12
+						std::_Container_proxy* _Myproxy = 0x29D0D0
+					std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *>* _Myhead = 0xB809040
+					unsigned int _Mysize = 0x0
+	Parameter DBCStorage<SpellEffectEntry>& storage = 0x36FDCB4
+		char* fmt = "nifiiiffiiiiiifiifiiiiiiiix"
+		unsigned int nCount = 0x2560A
+		unsigned int fieldCount = 0x1B
+		<unnamed-type-indexTable>
+			SpellEffectEntry** asT = 0x6966696E
+			char** asChar = 0x6966696E <Unable to read memory>
+		DBCStorage<SpellEffectEntry>::<unnamed-type-indexTable> indexTable
+			SpellEffectEntry** asT = NULL
+			char** asChar = NULL
+		SpellEffectEntry* dataTable = 0x16940040
+			unsigned int Id = 0x1
+			unsigned int Effect = 0x5
+			float EffectValueMultiplier = 1.000000
+			unsigned int EffectApplyAuraName = 0x0
+			unsigned int EffectAmplitude = 0x0
+			int EffectBasePoints = 0x0
+			float EffectBonusMultiplier = 1.000000
+			float EffectDamageMultiplier = 1.000000
+			unsigned int EffectChainTarget = 0x0
+			int EffectDieSides = 0x6
+			unsigned int EffectItemType = 0x0
+			unsigned int EffectMechanic = 0x0
+			int EffectMiscValue = 0x0
+			int EffectMiscValueB = 0x0
+			float EffectPointsPerComboPoint = 0.000000
+			unsigned int EffectRadiusIndex = 0x0
+			unsigned int EffectRadiusMaxIndex = 0x0
+			float EffectRealPointsPerLevel = 0.000000
+			flag96 EffectSpellClassMask = 0x16940088
+			unsigned int EffectTriggerSpell = 0x0
+			unsigned int EffectImplicitTargetA = 0x1
+			unsigned int EffectImplicitTargetB = 0x9
+			unsigned int EffectSpellId = 0x1
+			unsigned int EffectIndex = 0x0
+		std::list<char *,std::allocator<char *> > stringPoolList
+			std::_List_buy<char *,std::allocator<char *> >
+				std::_List_alloc<0,std::_List_base_types<char *,std::allocator<char *> > >
+					std::_List_val<std::_List_simple_types<char *> >
+						std::_Container_base12
+							std::_Container_proxy* _Myproxy = 0x36FDCC8
+						std::_List_node<char *,void *>* _Myhead = 0x702500
+						unsigned int _Mysize = 0x1
+		std::map<unsigned int,SpellEffectEntry const *,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> > > data
+			std::_Tree<std::_Tmap_traits<unsigned int,SpellEffectEntry const *,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> >,0> >
+				std::_Tree_comp<0,std::_Tmap_traits<unsigned int,SpellEffectEntry const *,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> >,0> >
+					std::_Tree_buy<std::pair<unsigned int const ,SpellEffectEntry const *>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> > >
+						std::_Tree_alloc<0,std::_Tree_base_types<std::pair<unsigned int const ,SpellEffectEntry const *>,std::allocator<std::pair<unsigned int const ,SpellEffectEntry const *> > > >
+							std::_Tree_val<std::_Tree_simple_types<std::pair<unsigned int const ,SpellEffectEntry const *> > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x36FDCD4
+								std::_Tree_node<std::pair<unsigned int const ,SpellEffectEntry const *>,void *>* _Myhead = 0x7013C0
+								unsigned int _Mysize = 0x0
+				<user defined> value_compare = 0x36FDCD4
+			<user defined> value_compare = 0x36FDCD4
+		bool loaded = 0x0
+	Parameter std::string& dbcPath = "./dbc/"
+	Parameter std::string& filename = "SpellEffect.dbc"
+	Parameter std::string* customFormat = "ppppppppppppppappppppppppp"
+	Parameter std::string* customIndexName = "Id"
+	Local SqlDbc* sql = 0x55370B8
+		std::string* formatString = "ppppppppppppppappppppppppp"
+		std::string* indexName = "Id"
+		std::string sqlTableName = "spelleffect_dbc"
+		int indexPos = 0x0
+		int sqlIndexPos = 0x0
+	Local std::string dbcFilename = "./dbc/SpellEffect.dbc"
+
+018DE725  00000000  LoadDBCStores+2AF5  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\game\datastores\dbcstores.cpp line 563
+	Local unsigned int i = 0x1E241
+	Local unsigned int i = 0x404
+	Local unsigned int i = 0x25D
+	Local unsigned int i = 0xB06
+	Local unsigned int i = 0x2D0E
+	Local unsigned int i = 0x7F5
+	Local unsigned int i = 0x2BCB
+	Local unsigned int i = 0x4F2
+	Local unsigned int i = 0x19
+	Local unsigned int i = 0xC
+	Local unsigned int i = 0x1AA
+	Local unsigned int i = 0x126A
+	Parameter std::string& dataPath = "./"
+	Local unsigned int pathCount = 0xCCCCCCCC
+	Local std::string dbcPath = "./dbc/"
+	Local unsigned int availableDbcLocales = 0xFFFFFE00
+	Local std::vector<unsigned int,std::allocator<unsigned int> > pathLength
+		std::_Vector_alloc<0,std::_Vec_base_types<unsigned int,std::allocator<unsigned int> > >
+			std::_Vector_val<std::_Simple_types<unsigned int> >
+				std::_Container_base12
+					std::_Container_proxy* _Myproxy = 0xCCCCCCCC <Unable to read memory>
+				unsigned int* _Myfirst = 0xCCCCCCCC <Unable to read memory>
+				unsigned int* _Mylast = 0xCCCCCCCC <Unable to read memory>
+				unsigned int* _Myend = 0xCCCCCCCC <Unable to read memory>
+	Local unsigned int oldMSTime = 0x655
+	Local std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > bad_dbc_files
+		std::_List_buy<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+			std::_List_alloc<0,std::_List_base_types<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >
+				std::_List_val<std::_List_simple_types<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+					std::_Container_base12
+						std::_Container_proxy* _Myproxy = 0x29D0D0
+					std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *>* _Myhead = 0xB809040
+					unsigned int _Mysize = 0x0
+
+014748DE  00000000  World::SetInitialWorldSettings+5DE  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\game\world\world.cpp line 1386
+	Local World* this = 0x36CC118
+		unsigned int m_ShutdownTimer = 0x0
+		unsigned int m_ShutdownMask = 0x0
+		unsigned int m_CleaningFlags = 0x0
+		bool m_isClosed = 0x0
+		int m_startTime = 0x5430503B
+		int m_gameTime = 0x5430503B
+		IntervalTimer[12] m_timers
+			[0] = 0x36CC138
+			[1] = 0x36CC148
+			[2] = 0x36CC158
+			[3] = 0x36CC168
+			[4] = 0x36CC178
+			[5] = 0x36CC188
+			[6] = 0x36CC198
+			[7] = 0x36CC1A8
+			[8] = 0x36CC1B8
+			[9] = 0x36CC1C8
+		int mail_timer = 0x0
+		int mail_timer_expires = 0x0
+		unsigned int m_updateTime = 0x0
+		unsigned int m_updateTimeSum = 0x0
+		unsigned int m_updateTimeCount = 0x0
+		unsigned int m_currentTime = 0x0
+		std::unordered_map<unsigned int,WorldSession *,std::hash<unsigned int>,std::equal_to<unsigned int>,std::allocator<std::pair<unsigned int const ,WorldSession *> > > m_sessions
+			std::_Hash<std::_Umap_traits<unsigned int,WorldSession *,std::_Uhash_compare<unsigned int,std::hash<unsigned int>,std::equal_to<unsigned int> >,std::allocator<std::pair<unsigned int const ,WorldSessi
+				std::_Umap_traits<unsigned int,WorldSession *,std::_Uhash_compare<unsigned int,std::hash<unsigned int>,std::equal_to<unsigned int> >,std::allocator<std::pair<unsigned int const ,WorldSession *> >,0>
+					std::_Uhash_compare<unsigned int,std::hash<unsigned int>,std::equal_to<unsigned int> >
+						std::_Hash_oper2<0,std::hash<unsigned int>,std::equal_to<unsigned int> >
+					<user defined> value_compare = 0x36CC218
+				<user defined> value_compare = 0x36CC218
+				std::list<std::pair<unsigned int const ,WorldSession *>,std::allocator<std::pair<unsigned int const ,WorldSession *> > > _List = 0x36CC218
+				std::vector<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<unsigned int const ,WorldSession *> > > >,std::_Wrap_alloc<std::allocator<std::_List_unchecked_iterator<std: _Vec = 0x36CC224
+				unsigned int _Mask = 0x7
+				unsigned int _Maxidx = 0x8
+				float _Max_bucket_size = 1.000000
+		std::unordered_map<unsigned int,__int64,std::hash<unsigned int>,std::equal_to<unsigned int>,std::allocator<std::pair<unsigned int const ,__int64> > > m_disconnects
+			std::_Hash<std::_Umap_traits<unsigned int,__int64,std::_Uhash_compare<unsigned int,std::hash<unsigned int>,std::equal_to<unsigned int> >,std::allocator<std::pair<unsigned int const ,__int64> >,0> >
+				std::_Umap_traits<unsigned int,__int64,std::_Uhash_compare<unsigned int,std::hash<unsigned int>,std::equal_to<unsigned int> >,std::allocator<std::pair<unsigned int const ,__int64> >,0>
+					std::_Uhash_compare<unsigned int,std::hash<unsigned int>,std::equal_to<unsigned int> >
+						std::_Hash_oper2<0,std::hash<unsigned int>,std::equal_to<unsigned int> >
+					<user defined> value_compare = 0x36CC240
+				<user defined> value_compare = 0x36CC240
+				std::list<std::pair<unsigned int const ,__int64>,std::allocator<std::pair<unsigned int const ,__int64> > > _List = 0x36CC240
+				std::vector<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<unsigned int const ,__int64> > > >,std::_Wrap_alloc<std::allocator<std::_List_unchecked_iterator<std::_List_ _Vec = 0x36CC24C
+				unsigned int _Mask = 0x7
+				unsigned int _Maxidx = 0x8
+				float _Max_bucket_size = 1.000000
+		unsigned int m_maxActiveSessionCount = 0x0
+		unsigned int m_maxQueuedSessionCount = 0x0
+		unsigned int m_PlayerCount = 0x0
+		unsigned int m_MaxPlayerCount = 0x0
+		std::string m_newCharString = ""
+		float[64] rate_values
+			[0] = 10.000000
+			[1] = 10.000000
+			[2] = 10.000000
+			[3] = 10.000000
+			[4] = 10.000000
+			[5] = 10.000000
+			[6] = 10.000000
+			[7] = 10.000000
+			[8] = 1.000000
+			[9] = 1.000000
+		unsigned int[163] m_int_configs
+			[0] = 0x1
+			[1] = 0xDBBA0
+			[2] = 0x493E0
+			[3] = 0x64
+			[4] = 0x927C0
+			[5] = 0x0
+			[6] = 0x1F97
+			[7] = 0xDBBA0
+			[8] = 0x2710
+			[9] = 0x10
+		bool[72] m_bool_configs
+			[0] = 0x0
+			[1] = 0x1
+			[2] = 0x0
+			[3] = 0x0
+			[4] = 0x1
+			[5] = 0x1
+			[6] = 0x0
+			[7] = 0x0
+			[8] = 0x0
+			[9] = 0x0
+		float[15] m_float_configs
+			[0] = 74.000000
+			[1] = 100.000000
+			[2] = 50.000000
+			[3] = 50.000000
+			[4] = 40.000000
+			[5] = 40.000000
+			[6] = 300.000000
+			[7] = 30.000000
+			[8] = 10.000000
+			[9] = 60.000000
+		std::map<unsigned int,unsigned __int64,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,unsigned __int64> > > m_worldstates
+			std::_Tree<std::_Tmap_traits<unsigned int,unsigned __int64,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,unsigned __int64> >,0> >
+				std::_Tree_comp<0,std::_Tmap_traits<unsigned int,unsigned __int64,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,unsigned __int64> >,0> >
+					std::_Tree_buy<std::pair<unsigned int const ,unsigned __int64>,std::allocator<std::pair<unsigned int const ,unsigned __int64> > >
+						std::_Tree_alloc<0,std::_Tree_base_types<std::pair<unsigned int const ,unsigned __int64>,std::allocator<std::pair<unsigned int const ,unsigned __int64> > > >
+							std::_Tree_val<std::_Tree_simple_types<std::pair<unsigned int const ,unsigned __int64> > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x36CC6A4
+								std::_Tree_node<std::pair<unsigned int const ,unsigned __int64>,void *>* _Myhead = 0x749858
+								unsigned int _Mysize = 0x0
+				<user defined> value_compare = 0x36CC6A4
+			<user defined> value_compare = 0x36CC6A4
+		unsigned int m_playerLimit = 0x0
+		int m_allowedSecurityLevel = 0x0
+		int m_defaultDbcLocale = 0x0
+		unsigned int m_availableDbcLocaleMask = 0x0
+		bool m_allowMovement = 0x1
+		std::string m_motd = "Welcome to Grumbo'z Cataclysm INST85."
+		std::string m_dataPath = "./"
+		LockedQueue<CliCommandHolder *,std::deque<CliCommandHolder *,std::allocator<CliCommandHolder *> > > cliCmdQueue
+			std::mutex _lock
+				std::_Mutex_base
+					_Mtx_internal_imp_t* _Mtx = 0x54FD930
+			std::deque<CliCommandHolder *,std::allocator<CliCommandHolder *> > _queue
+				std::_Deque_alloc<0,std::_Deque_base_types<CliCommandHolder *,std::allocator<CliCommandHolder *> > >
+					std::_Deque_val<std::_Deque_simple_types<CliCommandHolder *> >
+						std::_Container_base12
+							std::_Container_proxy* _Myproxy = 0x36CC704
+						CliCommandHolder*** _Map = NULL
+						unsigned int _Mapsize = 0x0
+						unsigned int _Myoff = 0x0
+						unsigned int _Mysize = 0x0
+			bool _canceled = 0x0
+		int m_NextDailyQuestReset = 0x0
+		int m_NextWeeklyQuestReset = 0x0
+		int m_NextMonthlyQuestReset = 0x0
+		int m_NextRandomBGReset = 0x0
+		int m_NextGuildReset = 0x0
+		int m_NextCurrencyReset = 0x0
+		std::list<WorldSession *,std::allocator<WorldSession *> > m_QueuedPlayer
+			std::_List_buy<WorldSession *,std::allocator<WorldSession *> >
+				std::_List_alloc<0,std::_List_base_types<WorldSession *,std::allocator<WorldSession *> > >
+					std::_List_val<std::_List_simple_types<WorldSession *> >
+						std::_Container_base12
+							std::_Container_proxy* _Myproxy = 0x36CC750
+						std::_List_node<WorldSession *,void *>* _Myhead = 0x54F5840
+						unsigned int _Mysize = 0x0
+		LockedQueue<WorldSession *,std::deque<WorldSession *,std::allocator<WorldSession *> > > addSessQueue
+			std::mutex _lock
+				std::_Mutex_base
+					_Mtx_internal_imp_t* _Mtx = 0x54FD988
+			std::deque<WorldSession *,std::allocator<WorldSession *> > _queue
+				std::_Deque_alloc<0,std::_Deque_base_types<WorldSession *,std::allocator<WorldSession *> > >
+					std::_Deque_val<std::_Deque_simple_types<WorldSession *> >
+						std::_Container_base12
+							std::_Container_proxy* _Myproxy = 0x36CC764
+						WorldSession*** _Map = NULL
+						unsigned int _Mapsize = 0x0
+						unsigned int _Myoff = 0x0
+						unsigned int _Mysize = 0x0
+			bool _canceled = 0x0
+		std::string m_DBVersion = "TDB 434.07"
+		std::map<unsigned char,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned char>,std::allocator<std::pair<unsigned char const ,std::basic_string<char,std::char_tra m_Autobroadcasts
+			std::_Tree<std::_Tmap_traits<unsigned char,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned char>,std::allocator<std::pair<unsigned char const ,std::basic_strin
+				std::_Tree_comp<0,std::_Tmap_traits<unsigned char,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned char>,std::allocator<std::pair<unsigned char const ,std::basi
+					std::_Tree_buy<std::pair<unsigned char const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<unsigned char const ,std::basic_string<char,std::char_tra
+						std::_Tree_alloc<0,std::_Tree_base_types<std::pair<unsigned char const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<unsigned char const ,std::basic
+							std::_Tree_val<std::_Tree_simple_types<std::pair<unsigned char const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x36CC798
+								std::_Tree_node<std::pair<unsigned char const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,void *>* _Myhead = 0x5501558
+								unsigned int _Mysize = 0x0
+				<user defined> value_compare = 0x36CC798
+			<user defined> value_compare = 0x36CC798
+		std::map<unsigned char,unsigned char,std::less<unsigned char>,std::allocator<std::pair<unsigned char const ,unsigned char> > > m_AutobroadcastsWeights
+			std::_Tree<std::_Tmap_traits<unsigned char,unsigned char,std::less<unsigned char>,std::allocator<std::pair<unsigned char const ,unsigned char> >,0> >
+				std::_Tree_comp<0,std::_Tmap_traits<unsigned char,unsigned char,std::less<unsigned char>,std::allocator<std::pair<unsigned char const ,unsigned char> >,0> >
+					std::_Tree_buy<std::pair<unsigned char const ,unsigned char>,std::allocator<std::pair<unsigned char const ,unsigned char> > >
+						std::_Tree_alloc<0,std::_Tree_base_types<std::pair<unsigned char const ,unsigned char>,std::allocator<std::pair<unsigned char const ,unsigned char> > > >
+							std::_Tree_val<std::_Tree_simple_types<std::pair<unsigned char const ,unsigned char> > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x36CC7A4
+								std::_Tree_node<std::pair<unsigned char const ,unsigned char>,void *>* _Myhead = 0x6F8D70
+								unsigned int _Mysize = 0x0
+				<user defined> value_compare = 0x36CC7A4
+			<user defined> value_compare = 0x36CC7A4
+		std::map<ObjectGuid,CharacterNameData,std::less<ObjectGuid>,std::allocator<std::pair<ObjectGuid const ,CharacterNameData> > > _characterNameDataMap
+			std::_Tree<std::_Tmap_traits<ObjectGuid,CharacterNameData,std::less<ObjectGuid>,std::allocator<std::pair<ObjectGuid const ,CharacterNameData> >,0> >
+				std::_Tree_comp<0,std::_Tmap_traits<ObjectGuid,CharacterNameData,std::less<ObjectGuid>,std::allocator<std::pair<ObjectGuid const ,CharacterNameData> >,0> >
+					std::_Tree_buy<std::pair<ObjectGuid const ,CharacterNameData>,std::allocator<std::pair<ObjectGuid const ,CharacterNameData> > >
+						std::_Tree_alloc<0,std::_Tree_base_types<std::pair<ObjectGuid const ,CharacterNameData>,std::allocator<std::pair<ObjectGuid const ,CharacterNameData> > > >
+							std::_Tree_val<std::_Tree_simple_types<std::pair<ObjectGuid const ,CharacterNameData> > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x36CC7B0
+								std::_Tree_node<std::pair<ObjectGuid const ,CharacterNameData>,void *>* _Myhead = 0x54E2C20
+								unsigned int _Mysize = 0x0
+				<user defined> value_compare = 0x36CC7B0
+			<user defined> value_compare = 0x36CC7B0
+		std::deque<std::future<std::shared_ptr<PreparedResultSet> >,std::allocator<std::future<std::shared_ptr<PreparedResultSet> > > > m_realmCharCallbacks
+			std::_Deque_alloc<0,std::_Deque_base_types<std::future<std::shared_ptr<PreparedResultSet> >,std::allocator<std::future<std::shared_ptr<PreparedResultSet> > > > >
+				std::_Deque_val<std::_Deque_simple_types<std::future<std::shared_ptr<PreparedResultSet> > > >
+					std::_Container_base12
+						std::_Container_proxy* _Myproxy = 0x36CC7BC
+					std::future<std::shared_ptr<PreparedResultSet> >** _Map = NULL
+					unsigned int _Mapsize = 0x0
+					unsigned int _Myoff = 0x0
+					unsigned int _Mysize = 0x0
+	Local PreparedStatement* stmt = 0x554DC78
+		MySQLPreparedStatement* m_stmt = 0x6EDF40
+			PreparedStatement* m_stmt = 0xB805E10
+			st_mysql_stmt* m_Mstmt = 0x13C23B18
+			unsigned int m_paramCount = 0x13C46CE0
+			std::vector<bool,std::allocator<bool> > m_paramsSet = 0x6EDF4C
+			st_mysql_bind* m_bind = 0x8C000000
+		unsigned int m_index = 0xB803D28
+		std::vector<PreparedStatementData,std::allocator<PreparedStatementData> > statement_data
+			std::_Vector_alloc<0,std::_Vec_base_types<PreparedStatementData,std::allocator<PreparedStatementData> > >
+				std::_Vector_val<std::_Simple_types<PreparedStatementData> >
+					std::_Container_base12
+						std::_Container_proxy* _Myproxy = 0x554DC78006EDF40
+					PreparedStatementData* _Myfirst = 0xCDCD0001
+					PreparedStatementData* _Mylast = 0xCDCD00F9
+					PreparedStatementData* _Myend = 0x1
+	Local unsigned int oldMSTime = 0xCCCCCCCC
+	Local tm localTm
+		int tm_sec = 0xCCCCCCCC
+		int tm_min = 0xCCCCCCCC
+		int tm_hour = 0xCCCCCCCC
+		int tm_mday = 0xCCCCCCCC
+		int tm_mon = 0xCCCCCCCC
+		int tm_year = 0xCCCCCCCC
+		int tm_wday = 0xCCCCCCCC
+		int tm_yday = 0xCCCCCCCC
+		int tm_isdst = 0xCCCCCCCC
+	Local unsigned int startupDuration = 0xCCCCCCCC
+	Local unsigned int nextGameEvent = 0xCCCCCCCC
+	Local unsigned int realm_zone = 0x2
+	Local unsigned int startupBegin = 0x93
+	Local unsigned int server_type = 0x1
+
+0140D8B2  00000000  main+1032  c:\users\black wolf gamer\desktop\eluna_trinitycata_4.3.4\eluna_trinitycata_4.3.4\src\server\worldserver\main.cpp line 199
+	Local int i = 0x2
+	Parameter int argc = 0x1
+	Parameter char** argv = "C:\Trinity Core2\4.3.4 core\Core\worldserver..."
+	Local std::vector<std::thread,std::allocator<std::thread> > threadPool
+		std::_Vector_alloc<0,std::_Vec_base_types<std::thread,std::allocator<std::thread> > >
+			std::_Vector_val<std::_Simple_types<std::thread> >
+				std::_Container_base12
+					std::_Container_proxy* _Myproxy = 0x29F774
+				std::thread* _Myfirst = 0x6F8FF0
+					id
+						_Thrd_imp_t _Thr = 0x1EF400000150
+					_Thrd_imp_t _Thr = 0x1EF400000150
+				std::thread* _Mylast = 0x6F9000
+					id
+						_Thrd_imp_t _Thr = 0xFDFDFDFD
+					_Thrd_imp_t _Thr = 0xFDFDFDFD
+				std::thread* _Myend = 0xFDFDFDFD
+	Local BigNumber seed
+		bignum_st* _bn = 0x3C1B10
+			unsigned int* d = 0x6121716D
+			int top = 0x4
+			int dmax = 0x4
+			int neg = 0x0
+			int flags = 0x1
+	Local std::string configFile = "worldserver.conf"
+	Local std::string pidFile = ""
+	Local std::thread* soapThread = 0xCCCCCCCC
+		id
+			_Thrd_imp_t _Thr
+				void* _Hnd = <Unable to read memory>
+				unsigned int _Id = 0xCCCCCCD0 <Unable to read memory>
+		_Thrd_imp_t _Thr = 0xCCCCCCCC <Unable to read memory>
+	Local boost::program_options::variables_map vm
+		boost::program_options::abstract_variables_map
+			boost::program_options::abstract_variables_map* m_next = NULL
+		std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,boost::program_options::variable_value,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,s
+			std::_Tree<std::_Tmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,boost::program_options::variable_value,std::less<std::basic_string<char,std::char_traits<char>,std::a
+				std::_Tree_comp<0,std::_Tmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,boost::program_options::variable_value,std::less<std::basic_string<char,std::char_traits<char>
+					std::_Tree_buy<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,boost::program_options::variable_value>,std::allocator<std::pair<std::basic_string<char,std::char_
+						std::_Tree_alloc<0,std::_Tree_base_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,boost::program_options::variable_value>,std::allocator<std::pair<std::ba
+							std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,boost::program_options::variable_value> > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x29FC14
+								std::_Tree_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,boost::program_options::variable_value>,void *>* _Myhead = 0x706670
+								unsigned int _Mysize = 0x2
+				<user defined> value_compare = 0x29FC14
+			<user defined> value_compare = 0x29FC14
+		std::set<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::basic_string<char,st m_final
+			std::_Tree<std::_Tset_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::
+				std::_Tree_comp<0,std::_Tset_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocato
+					std::_Tree_buy<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+						std::_Tree_alloc<0,std::_Tree_base_types<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >
+							std::_Tree_val<std::_Tree_simple_types<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x29FC20
+								std::_Tree_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *>* _Myhead = 0x706548
+								unsigned int _Mysize = 0x0
+		std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<ch m_required
+			std::_Tree<std::_Tmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char
+				std::_Tree_comp<0,std::_Tmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_stri
+					std::_Tree_buy<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<st
+						std::_Tree_alloc<0,std::_Tree_base_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,s
+							std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >
+								std::_Container_base12
+									std::_Container_proxy* _Myproxy = 0x29FC2C
+								std::_Tree_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,void *>* _Myhead = 0x7067A8
+								unsigned int _Mysize = 0x0
+				<user defined> value_compare = 0x29FC2C
+			<user defined> value_compare = 0x29FC2C
+	Local std::string worldListener = 0x29F65C <Unable to read memory>
+	Local std::string configService = ""
+	Local std::string configError = ""
+	Local AsyncAcceptor* raAcceptor = 0xCCCCCCCC
+		boost::asio::basic_socket_acceptor<boost::asio::ip::tcp,boost::asio::socket_acceptor_service<boost::asio::ip::tcp> > _acceptor
+			boost::asio::basic_io_object<boost::asio::socket_acceptor_service<boost::asio::ip::tcp>,1>
+				implementation_type
+					boost::asio::detail::win_iocp_socket_service_base::base_implementation_type
+						unsigned int socket_ = 0xCCCCCCCC <Unable to read memory>
+						unsigned int state_ = 0xCCCCCCD0 <Unable to read memory>
+						std::shared_ptr<void> cancel_token_ = 0xCCCCCCD4 <Unable to read memory>
+						boost::asio::detail::select_reactor::per_descriptor_data reactor_data_ = 0xCCCCCCDC <Unable to read memory>
+						boost::asio::detail::win_iocp_socket_service_base::base_implementation_type* next_ = <Unable to read memory>
+						boost::asio::detail::win_iocp_socket_service_base::base_implementation_type* prev_ = <Unable to read memory>
+					boost::asio::ip::tcp protocol_ = 0xCCCCCCE8 <Unable to read memory>
+					bool have_remote_endpoint_ = 0xCCCCCCEC <Unable to read memory>
+					boost::asio::ip::basic_endpoint<boost::asio::ip::tcp> remote_endpoint_ = 0xCCCCCCF0
+				boost::asio::detail::win_iocp_socket_service<boost::asio::ip::tcp>::implementation_type implementation = 0xCCCCCCCC
+				boost::asio::socket_acceptor_service<boost::asio::ip::tcp>* service_ = <Unable to read memory>
+			native_type
+				unsigned int socket_ = 0xCCCCCCCC <Unable to read memory>
+				bool have_remote_endpoint_ = 0xCCCCCCD0 <Unable to read memory>
+				boost::asio::ip::basic_endpoint<boost::asio::ip::tcp> remote_endpoint_ = 0xCCCCCCD4
+			native_handle_type
+				unsigned int socket_ = 0xCCCCCCCC <Unable to read memory>
+				bool have_remote_endpoint_ = 0xCCCCCCD0 <Unable to read memory>
+				<user defined> remote_endpoint_ = 0xCCCCCCD4
+		boost::asio::basic_stream_socket<boost::asio::ip::tcp,boost::asio::stream_socket_service<boost::asio::ip::tcp> > _socket
+			boost::asio::basic_socket<boost::asio::ip::tcp,boost::asio::stream_socket_service<boost::asio::ip::tcp> >
+				boost::asio::basic_io_object<boost::asio::stream_socket_service<boost::asio::ip::tcp>,1>
+					implementation_type
+						boost::asio::detail::win_iocp_socket_service_base::base_implementation_type
+							unsigned int socket_ = 0xCCCCCD10 <Unable to read memory>
+							unsigned int state_ = 0xCCCCCD14 <Unable to read memory>
+							std::shared_ptr<void> cancel_token_ = 0xCCCCCD18 <Unable to read memory>
+							boost::asio::detail::select_reactor::per_descriptor_data reactor_data_ = 0xCCCCCD20 <Unable to read memory>
+							boost::asio::detail::win_iocp_socket_service_base::base_implementation_type* next_ = <Unable to read memory>
+							boost::asio::detail::win_iocp_socket_service_base::base_implementation_type* prev_ = <Unable to read memory>
+						boost::asio::ip::tcp protocol_ = 0xCCCCCD2C <Unable to read memory>
+						bool have_remote_endpoint_ = 0xCCCCCD30 <Unable to read memory>
+						boost::asio::ip::basic_endpoint<boost::asio::ip::tcp> remote_endpoint_ = 0xCCCCCD34
+					boost::asio::detail::win_iocp_socket_service<boost::asio::ip::tcp>::implementation_type implementation = 0xCCCCCD10
+					boost::asio::stream_socket_service<boost::asio::ip::tcp>* service_ = <Unable to read memory>
+				native_type
+					unsigned int socket_ = 0xCCCCCD10 <Unable to read memory>
+					bool have_remote_endpoint_ = 0xCCCCCD14 <Unable to read memory>
+					boost::asio::ip::basic_endpoint<boost::asio::ip::tcp> remote_endpoint_ = 0xCCCCCD18
+				native_handle_type
+					unsigned int socket_ = 0xCCCCCD10 <Unable to read memory>
+					bool have_remote_endpoint_ = 0xCCCCCD14 <Unable to read memory>
+					<user defined> remote_endpoint_ = 0xCCCCCD18
+			native_type
+				unsigned int socket_ = 0xCCCCCD10 <Unable to read memory>
+				bool have_remote_endpoint_ = 0xCCCCCD14 <Unable to read memory>
+				<user defined> remote_endpoint_ = 0xCCCCCD18
+			native_handle_type
+				unsigned int socket_ = 0xCCCCCD10 <Unable to read memory>
+				bool have_remote_endpoint_ = 0xCCCCCD14 <Unable to read memory>
+				<user defined> remote_endpoint_ = 0xCCCCCD18
+	Local int numThreads = 0x2
+	Local std::thread* cliThread = 0xCCCCCCCC
+		id
+			_Thrd_imp_t _Thr
+				void* _Hnd = <Unable to read memory>
+				unsigned int _Id = 0xCCCCCCD0 <Unable to read memory>
+		_Thrd_imp_t _Thr = 0xCCCCCCCC <Unable to read memory>
+	Local boost::asio::basic_signal_set<boost::asio::signal_set_service> signals
+		boost::asio::basic_io_object<boost::asio::signal_set_service,0>
+			implementation_type
+				boost::asio::detail::op_queue<boost::asio::detail::signal_op> queue_
+					boost::asio::detail::signal_op* front_ = 0x720708
+					boost::asio::detail::signal_op* back_ = 0x754CF8
+				boost::asio::detail::signal_set_service::registration* signals_ = 0x754CF8
+					int signal_number_ = 0x0
+					boost::asio::detail::op_queue<boost::asio::detail::signal_op>* queue_ = NULL
+					unsigned int undelivered_ = 0x0
+					boost::asio::detail::signal_set_service::registration* next_in_table_ = NULL
+					boost::asio::detail::signal_set_service::registration* prev_in_table_ = NULL
+					boost::asio::detail::signal_set_service::registration* next_in_set_ = NULL
+			boost::asio::signal_set_service& service = 0x720708
+				boost::asio::detail::service_base<boost::asio::signal_set_service>
+					boost::asio::io_service::service
+						key
+							type_info* type_info_ = 0x312CC44
+							boost::asio::io_service::id* id_ = 0xC8
+						boost::asio::io_service::service::key key_ = 0x365AD40
+						boost::asio::io_service& owner_ = 0x36CCA7C
+						boost::asio::io_service::service* next_ = 0x6F5318
+				implementation_type
+					boost::asio::detail::op_queue<boost::asio::detail::signal_op> queue_ = 0x365AD400312CC44
+					boost::asio::detail::signal_set_service::registration* signals_ = NULL
+				boost::asio::detail::signal_set_service service_impl_ = 0x72071C
+			boost::asio::detail::signal_set_service::implementation_type implementation
+				boost::asio::detail::op_queue<boost::asio::detail::signal_op> queue_
+					<user defined> front_ = 0x754CF8
+					boost::asio::detail::signal_op* back_ = 0x754CF8
+				boost::asio::detail::signal_set_service::registration* signals_ = 0x701F00
+	Local unsigned int worldPort = 0xCCCC
+
+029E7E89  00000000  __tmainCRTStartup+199  f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c line 626
+	Local void* lock_free = NULL
+	Local void* fiberid = 0x2A0000
+	Local int nested = 0x0
+
+029E7FCD  00000000  mainCRTStartup+D  f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c line 466
+756D338A  00000000  BaseThreadInitThunk+12
+777E9F72  00000000  RtlInitializeExceptionChain+63
+777E9F45  00000000  RtlInitializeExceptionChain+36
